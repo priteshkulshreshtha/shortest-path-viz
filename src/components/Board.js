@@ -130,7 +130,7 @@ const Board = () => {
     const shortestPath = () => {
         console.log("finding");
         if (!isStartPlaced || !isEndPlaced) {
-            console.log("kaise kr dun jaadu ha kya");
+            alert('Add Start and End Node');
             return;
         }
 
@@ -160,7 +160,7 @@ const Board = () => {
             console.log("Found");
         }
         else {
-            console.log("End cant be reached");
+            alert("End Can't Be reached!");
         }
     };
 
