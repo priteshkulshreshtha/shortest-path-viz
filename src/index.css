@@ -1,13 +1,160 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;500&display=swap');
+
+:root {
+
+
+
+  --light_font: 'Noto Sans TC', sans-serif;;
+  --primary: #FBFAF8;
+  --accent: #35A7FF;
+  --light: #C7EF00;
+  --dark: ;
+  --background: var(--primary);
+  --start-bg: #373F51;
+  --end-bg: #ED6A5A;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
+
+body {
+  background-color: var(--background);
+  margin: 0 2em;
+  font-family: var(--light_font);
+  color: var(--dark);
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+  transition: all 0.4s ease-in;
+  background: none;
+  border: 2px solid var(--dark);  
+}
+
+
+.short line {
+  stroke: #C7EF00;
+}
+
+.title {
+  text-align: center;
+  position: fixed;
+  color: var(--light);
+  position: fixed;
+  left: 0;
+  width: 100%;
+}
+
+.graph-board {
+  display: flex;
+  justify-self: center;
+  overflow: hidden;
+  background-color: var(--primary);
+  height: 80vh;
+}
+
+.node-nav {
+  height: 8vh;
+  padding: 0.75em;
+  margin: 2vh 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.node-nav-item {  
+  /* background-color: var(--accent); */
+  text-align: center;
+  padding: 2vh 5vw;
+}
+
+.placed-node:hover {
+  transition: all 0.2s linear;
+  transform: scale(1.3);
+  box-shadow: 0 0 5px var(--accent);
+  /* border: 0.4em solid; */
+}
+
+.placed-node {
+  background-color: var(--background);
+  transition: all 0.2s linear;
+  margin: 1em;
+  padding: 0;
+  position: absolute;
+  height: 2em;
+  width: 2em;
+  border: 0.2em solid;
+  border-radius: 100%;
+  color: var(--light);
+}
+
+.start {
+  background-color: var(--start-bg);
+}
+
+.end {
+  background-color: var(--end-bg);
+}
+
+.edge {
+  position: fixed;
+  top: 0; 
+  /* height: 100%; */
+  /* width: 100%; */
+  overflow: visible;
+}
+
+.short line {
+  animation: draw_in 2s ease-in;
+  stroke-width: 5;
+}
+
+line {
+  /* animation: draw_in 1s ease-in;
+  stroke-dashoffset: 100%;
+  stroke-dasharray: 100%; */
+  stroke: var(--accent);
+  stroke-width: 2;
+}
+
+@keyframes draw_in {
+  from {
+     stroke-dashoffset: 100%;
+  
+  }
+  to {
+     stroke-dashoffset: 0%;
+     
+  }
+}
+
+.short {
+  z-index: 10;
+}
+
+.solver-div {
+  display: flex;
+  justify-content: center;
+}
+
+.solver-div button {
+  /* background-color: aqua; */
+  padding: 0.75vh 2vh;
+}
+
+@media screen and (max-width: 480px) {
+
+  button {
+    border: 0.5px solid var(--dark);  
+  }
+
+  .title {
+    font-size: 5vw;    
+  }
+
+}
+
