@@ -167,7 +167,7 @@ const Board = () => {
 
     return (
         <div className='container'>
-            <h1 className='title'>Shortest Path Vizualizer</h1>
+            <h1 className='title'>Shortest Path Visualizer</h1>
             <div className="graph-board" onClick={(e) => { handlePlaceNodeClick(e) }}>
                 {nodeCoordinates.length > 0 && <GenerateGraph nodeCoordinates={nodeCoordinates} handlePlaceEdge={handlePlaceEdge} />}
                 {Object.keys(edgeList).length > 0 && <EdgeDraw edgeList={edgeList} />}
