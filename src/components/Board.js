@@ -1,11 +1,15 @@
 import AddNodeNav from './AddNodeNav.js';
 import GenerateGraph from './GenerateGraph';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import EdgeDraw from './EdgeDraw';
 import GetPath from './GetPath';
 import ShortDraw from './ShortDraw';
 
 const Board = () => {
+
+    useEffect(() => {
+        document.title = "Shortest Path Visualizer";
+     }, []);
 
     const [selectedNode, setSelectedNode] = useState(null);
     const [isStartPlaced, setIsStartPlaced] = useState(false);
